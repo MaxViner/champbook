@@ -1,0 +1,38 @@
+.main {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+  }
+  
+  .btnContainer {
+    width: 90%;
+    display: flex;
+    gap: 20%;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  
+  .exit,
+  .reboot {
+    background: transparent;
+    width: 40%;
+    border: none;
+    border-radius: 50%;
+    transition:  0.9s ease-in-out;
+  }
+  
+  .exit img,
+  .reboot img {
+    width: 100%;
+  }
+  
+  .exit:hover,
+  .reboot:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px red, 0px 0px 20px gold;
+    background: radial-gradient(circle at top left, rgba(255, 0, 0, 0.589), rgba(255, 255, 0, 0.523));
+  }

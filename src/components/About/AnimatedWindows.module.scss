@@ -1,0 +1,159 @@
+.AnimatedWindows {
+  position: relative;
+    height: 140vh; /* Set a height to allow scrolling */
+    width: 100%;
+    background-image: url('../../assets//camon//main.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .title{
+    text-align: center;
+    background: linear-gradient(to right, #ffd700, #ffd700 50%, #fff 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 36px;
+    color: rgb(216, 27, 27);
+    font-weight: 700;
+    text-shadow: 0 0 10px #ffd700, 1px 1px 20px yellow;
+    backdrop-filter: blur(5px);
+  }
+  .window{
+    text-align: center;
+    width: 90%;
+    height: max-content;
+    margin-left: 5%;
+    background: linear-gradient(to right, #ffd700, #ffd700 50%, #fff 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    text-shadow: 0 0 10px #ffd700, 1px 1px 20px yellow;
+    backdrop-filter: blur(5px);
+    box-shadow: 1px 2px 10px gold 1px 0px 5px red;
+  }
+  .window1 {
+    margin-top: 10%;
+  }
+  .ABout__button{
+    background-color: red;
+    display: none;
+    color: whitesmoke;
+    z-index: 1000;
+  }
+  .hidenText{
+    display: none;
+  }
+  .window2 {
+    margin-top: 35%;
+    max-width: 90%;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .window3 {
+    top: 20%;
+    max-width: 90%;
+
+  }
+  .window4 {
+    margin-top: 60%;
+    max-width: 90%;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .window5 {
+    margin-top: 80%;
+    max-width: 90%;
+   
+    transition: opacity 0.5s ease-in-out;
+  }
+  .favorite{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 26px;
+    background: rgba(249, 1, 1, 0.418);
+    border-radius: 15px;
+    span{
+      text-decoration: none;
+    }
+  }
+  .visible {
+    display: flex;
+    opacity: 1;
+    animation: slide-in 0.5s ease-in-out;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  
+
+
+
+
+.textContainer{
+    transition: max-height 0.9s ease-in-out; /* Add transition property */
+    color: whitesmoke;
+    text-shadow: 1px 1px 5px gold;
+    max-height: 300px; 
+}
+.text{
+  z-index: 99;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: max-height 0.9s ease-in-out; /* Add transition property */
+    max-height: 300px; /* Set initial max-height */
+    backdrop-filter: blur(2px);
+    a{
+        cursor: pointer;
+        >span{
+            text-decoration: underline;
+            :hover{
+                text-shadow: 2px 3px 15px gold;
+                color: rgba(255, 0, 0, 0.732);
+                transform: scale(1.1);
+            }
+        }
+    }
+   
+}
+.expanded {
+    max-height: max-content; 
+.readMore{
+    color: #ffd700;
+    z-index: 999;
+    margin-top: 30px;
+    cursor: pointer;
+    backdrop-filter: blur(3px);
+    font-size: 22px;
+    text-shadow: 1px 1px 5px gold, 1px 1px 10px red;
+    :hover{
+        transform: scale(1.2);
+    }
+}}
+
+.skroll{
+  position: absolute;
+  left: 0;
+  top:450px;
+  transform: rotate(90deg);
+}
+
+.randomPick{
+  font-size: 30px;
+  color: gold;
+}
+.Allpick{
+  font-size: 30px;
+  color: gold;
+}
