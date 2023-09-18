@@ -1,0 +1,39 @@
+.modal{
+    overflow: scroll;
+    position: absolute;
+    overflow-x: hidden;
+    width:100% ;
+    min-height: 100%;
+    height: max-content;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.674);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    transition: 0.5s ease-in-out;
+    margin-bottom: 100px;
+    &__content{
+        display: flex;
+        align-items: center;
+    }
+    button{
+        text-align: center;
+        width: 80%;
+        border-radius: 16px;
+        font-size: 22px;
+    }
+    p{
+        text-align: center;
+        width: 90%;
+        margin-left: 5%;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    
+}
+
+.open{
+    transform: translateX(1000px);
+}

@@ -1,12 +1,29 @@
 .AnimatedWindows {
   position: relative;
-    height: 140vh; /* Set a height to allow scrolling */
+    min-height: 100vh; /* Set a height to allow scrolling */
     width: 100%;
+    padding-top: 60px;
     background-image: url('../../assets//camon//main.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+  button{
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.474), 0px 0px 20px rgba(255, 217, 0, 0.527);
+    text-decoration: none;
+  }
+  h2{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px #ffd700, 1px 1px 20px yellow;
 
+  }
   .title{
     text-align: center;
     background: linear-gradient(to right, #ffd700, #ffd700 50%, #fff 50%);
@@ -19,71 +36,74 @@
     text-shadow: 0 0 10px #ffd700, 1px 1px 20px yellow;
     backdrop-filter: blur(5px);
   }
+  .btns{
+    padding-top: 40px;
+    display: grid;
+    height: 100%;
+    gap: 30px;
+    grid-template-rows: repeat(5,1fr);
+    margin-bottom: 100px;
+  }
   .window{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 15px;
     text-align: center;
     width: 90%;
-    height: max-content;
+    height: 90%;
+    background: transparent;
     margin-left: 5%;
-    background: linear-gradient(to right, #ffd700, #ffd700 50%, #fff 50%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
     font-size: 22px;
-    color: rgb(255, 255, 255);
     font-weight: 700;
-    text-shadow: 0 0 10px #ffd700, 1px 1px 20px yellow;
     backdrop-filter: blur(5px);
-    box-shadow: 1px 2px 10px gold 1px 0px 5px red;
+    box-shadow: 1px 2px 10px gold, 1px 0px 5px red;
+    transition: 0.7s ease-in-out;
+    border: none;
+    text-decoration: none;
   }
-  .window1 {
-    margin-top: 10%;
+  .window:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 2px 10px gold, 1px 0px 15px red;
+    background-color: rgba(0, 249, 254, 0.211);
+
   }
+  
   .ABout__button{
-    background-color: red;
-    display: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.381);
     color: whitesmoke;
     z-index: 1000;
+    border-radius: 20px;
   }
   .hidenText{
     display: none;
   }
-  .window2 {
-    margin-top: 35%;
-    max-width: 90%;
-    transition: opacity 0.5s ease-in-out;
-  }
-  .window3 {
-    top: 20%;
-    max-width: 90%;
-
-  }
-  .window4 {
-    margin-top: 60%;
-    max-width: 90%;
-    transition: opacity 0.5s ease-in-out;
-  }
-  .window5 {
-    margin-top: 80%;
-    max-width: 90%;
-   
-    transition: opacity 0.5s ease-in-out;
-  }
-  .favorite{
-    width: 100%;
+  
+  .favorites{
+    width: 90%;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    font-size: 26px;
-    background: rgba(249, 1, 1, 0.418);
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    font-size: 22px;
+    background: rgba(249, 1, 1, 0.142);
     border-radius: 15px;
-    span{
-      text-decoration: none;
-    }
   }
   .visible {
     display: flex;
     opacity: 1;
     animation: slide-in 0.5s ease-in-out;
+  }
+  .visibleText{
+    display: flex;
+    opacity: 1;
+    animation: slide-in 0.5s ease-in-out;
+    z-index: 225;
   }
   
   @keyframes slide-in {
@@ -101,7 +121,7 @@
 
 
 .textContainer{
-    transition: max-height 0.9s ease-in-out; /* Add transition property */
+    transition: max-height 0.9s ease-in-out; 
     color: whitesmoke;
     text-shadow: 1px 1px 5px gold;
     max-height: 300px; 

@@ -34,3 +34,17 @@
       return [];
     }
   };
+
+  export const removeFromFavorites = (id, number) => {
+    try {
+      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      const updatedFavorites = favorites.filter(
+        (favorite) => !(favorite.id === id && favorite.number === number)
+      );
+      console.log(`remove ${id} ${number}`);
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+    } catch (error) {
+      // Handle the error gracefully
+      console.error('Error accessing localStorage:', error);
+    }
+  };

@@ -16,7 +16,7 @@ export default function HallOfGlory({ toglePicked }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
 
   const toggleExpand = () => {
    

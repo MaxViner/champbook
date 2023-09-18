@@ -9,17 +9,17 @@
   }
   
   .btnContainer {
-    width: 90%;
+    width: 60%;
     display: flex;
     gap: 20%;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 50px;
   }
   
   .exit,
   .reboot {
     background: transparent;
-    width: 40%;
+    width: 50px;
     border: none;
     border-radius: 50%;
     transition:  0.9s ease-in-out;

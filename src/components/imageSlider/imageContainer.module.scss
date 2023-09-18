@@ -1,10 +1,24 @@
+*{list-style: none;}
 main{
+    overflow-x: hidden;
+    box-sizing: border-box;
     width: 100%;
     height: max-content;
     display: flex;
     gap: 20px;
     flex-direction: column;
     margin: 0 auto;
+    position: relative;
+}
+.exit{
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    z-index: 99999;
+    transition: 0.5s ease-in-out;
+}
+.exit:hover{
+    transform: scale(1.2);
 }
 .imageContainer{
     width: 100%;
@@ -22,11 +36,14 @@ main{
             left: 5%;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.312);
-            font-size: 24px;
+            font-size: 36px;
             color: rgb(255, 250, 250);
             font-weight: 700;
             text-shadow: 0 0 10px #ffd700, 1px 1px 20px yellow, 1px 1px 20px rgb(255, 13, 0);
             backdrop-filter: blur(3px);
+            @media screen and (max-width:768px) {
+                font-size: 22px;
+            }
         }
     }
     img{
@@ -59,19 +76,28 @@ main{
     }
 }
 .textContainer{
+    padding: 30px;
     transition: max-height 0.9s ease-in-out; /* Add transition property */
     color: whitesmoke;
     text-shadow: 1px 1px 5px gold, 1px 1px 20px whitesmoke; 
     max-height: 300px; 
+    
+    @media screen and (max-width:768px) {
+        font-size: 16px;
+        padding: 10px;
+
+    }
 }
 .text{
     width: 100%;
     text-overflow: ellipsis;
-    overflow: hidden;
     font-size: 18px;
     transition: max-height 0.9s ease-in-out; /* Add transition property */
     max-height: 300px; /* Set initial max-height */
     backdrop-filter: blur(2px);
+    @media screen and (max-width:768px) {
+        font-size: 16px;
+    }
     a{
         cursor: pointer;
         >span{
@@ -85,6 +111,7 @@ main{
     }
    
 }
+
 .expanded {
     max-height: max-content; /* Set max-height to max-content when expanded */
   }
@@ -107,14 +134,29 @@ main{
     gap: 20px;
     margin-bottom: 40px;
 }
+.row1{
+    width: 100%;
+    padding-left:3% ;
+    padding-right: 3%;
+}
+.row2{
+    width: 100%;
+    gap: 30px;
+    display: flex;
+    @media screen and (max-width:768px) {
+        flex-direction: column;
+    }
+}
 .citateList,.history,.links{
     display: none;
     opacity: 0;
     transition: 0.5s ease-in-out;
 }
+
 .open.citateList, .open.links{
     opacity: 1;
     width: 95%;
+    margin-top: 20px;
    display: flex;
    text-align: left;
    flex-direction: column;
@@ -124,15 +166,44 @@ main{
 
 .citateItem{
     width: 100%;
-    font-size: 16px;
+    font-size: 22px;
+    @media screen and (max-width:768px) {
+        font-size: 16px;
+    }
 }
 .open.history{
     opacity: 1;
-    width: 95%;
+    width: 175%;
+    margin-right: 100%;
    display: flex;
+   @media screen and (max-width:768px) {
+    width: 95%;
+    margin-right: 0;
+   }
+}
+.marginTop.history{
+    margin-top: 30vh;
 }
 
 .slide{
-    min-height: 150vh;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    min-height: 100vh;
     margin-bottom: 50px;
+    display: grid;
+    position: relative;
+    grid-template-columns: 50% 50%;
+    @media screen and (max-width:1220px) {
+        min-height: 150vh;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.sep{
+    position: absolute;
+    height: 100vh;
+    left: 49%;
+    @media screen and (max-width:1220px) {
+       display: none;
+    }
 }

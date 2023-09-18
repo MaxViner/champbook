@@ -10,9 +10,10 @@ import RandomPage from "../pages/RandomPage";
 export const RANDOM_ROUTE='/random'
 export const ALLCITATES_ROUTE='/all'
 export const FAVORITE_ROUTE='/favorites'
+export const HOME_ROUTE = '/'
  export const routes = [
   {
-    path: '/',
+    path: HOME_ROUTE,
     element: <HomePage />,
   },
   {

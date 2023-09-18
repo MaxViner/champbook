@@ -1,16 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
-import { getFavorites } from '../../utils/localStorage';
+import { getFavorites, removeFromFavorites } from '../../utils/localStorage';
 import styles from './Favorite.module.scss'
 import open from '../../assets/camon/open.png'
+import deleteicon from '../../assets/camon/delete.jpg'
 import { SlideItem } from '../imageSlider/SlideItem';
+import exit from '../../assets/camon/exit.jpg'
+import { Link } from 'react-router-dom';
+import { HOME_ROUTE } from '../../routes/routes';
+
 export default function Favorite() {
   const [isChecked, setIsCHecked]=useState(false)
   const [checkedPage, setCheckedPage]=useState({})
   const [checkedNumber, setCheckedNumber]=useState(0)
 
   const pages = useSelector((state) => state.pages);
-  const favorites= getFavorites()
+  const [favorites, setFavorites]=useState(getFavorites())
+
   let citates=[]
 
   favorites.forEach(item => {
@@ -43,10 +49,17 @@ console.log(isChecked);
    
  };
 
+ useEffect(
+  ()=>{
+   setFavorites( getFavorites() )
+  },[isChecked]
+ )
+
   return (
   <>
     {isChecked?
-      <SlideItem  {...checkedPage}  
+      <SlideItem  
+      {...checkedPage}  
       expanded={expanded}
       toggleExpand={toggleExpand}
       citateNumber={checkedNumber}
@@ -58,6 +71,9 @@ console.log(isChecked);
       } />
     :
     <main className={styles.Favorites}>
+      <Link to={HOME_ROUTE}>
+      <img src={exit} width={'30px'} alt="exit" className={styles.exit} />
+      </Link>
     <h1 className={styles.Favorites__title}>
       Favorites
     </h1>
@@ -78,6 +94,12 @@ console.log(isChecked);
                 onClick={()=>HandleOpen(citate.page, citate.FavorCitateNumber)}
                 />
               </span>
+              <img src={deleteicon} 
+              onClick={()=>{
+                removeFromFavorites(citate.page.id, citate.FavorCitateNumber)
+                setFavorites(getFavorites())
+              }}
+              alt="delete" className={styles.deleteicon} width={'30px'}/>
           </li>
    })}
   </ul>

@@ -22,7 +22,7 @@ export  const Random=({data}) =>{
     <main className={styles.main}>
     <SlideItem {...pages[randomIndex] }
      expanded={expanded}
-    toggleExpand={toggleExpand}/>
+     toggleExpand={toggleExpand}/>
 
     <div className={styles.btnContainer}>
 

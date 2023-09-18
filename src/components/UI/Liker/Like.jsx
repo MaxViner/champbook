@@ -1,13 +1,10 @@
 import React from 'react';
-import { addToFavorites } from '../../../utils/localStorage';
+import { addToFavorites, checkFavorite, removeFromFavorites } from '../../../utils/localStorage';
 import './Heart.css'
-export const Like = ({id,number,isFilled,setIsFilled}) => {
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+export const Like = ({id,number,isFilled,setIsFilled, onClick}) => {
 
-  const handleClick = () => {
-    addToFavorites(id, number);
-    setIsFilled&& setIsFilled(true)
-  };
-  
   return (
        <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +14,7 @@ export const Like = ({id,number,isFilled,setIsFilled}) => {
       fill={isFilled ? 'red' : 'none'}
       stroke="red"
       strokeWidth="2"
-      onClick={handleClick}
+      onClick={onClick}
       style={{ cursor: 'pointer' }}
     >
       <path d="M20 4.5C15.5 1 8.5 3.5 8.5 9c0 4.5 4.5 6.5 11.5 12.5C26.5 15.5 31 13.5 31 9c0-5.5-7-8-11.5-4.5z" />
@@ -26,3 +23,35 @@ export const Like = ({id,number,isFilled,setIsFilled}) => {
   );
 };
 
+
+export const LikeSection = React.memo(({ id, randomIndex, isFilled, isFavorite, setIsFilled }) => {
+  const LikeHandler = (id, number) => {
+    const isFavorite = checkFavorite(id, number);
+    console.log(id, number);
+    console.log(isFavorite);
+    if (isFavorite) {
+      setIsFilled(false);
+      removeFromFavorites(id, number);
+       toast('Удалено из избранного');
+    } else {
+      setIsFilled(true);
+      addToFavorites(id, number);
+      toast('Добавлено в избранное'); 
+    }
+  };
+
+  return (
+    <>
+    <div className='heart'>
+      <Like
+        onClick={() => LikeHandler(id, randomIndex)}
+        id={id}
+        number={randomIndex}
+        isFilled={isFavorite || isFilled}
+        setIsFilled={setIsFilled}
+      />
+    </div>
+     <ToastContainer />
+    </>
+  );
+});
