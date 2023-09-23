@@ -9,8 +9,6 @@ export const Like = ({id,number,isFilled,setIsFilled, onClick}) => {
        <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 40 40"
-      width="40"
-      height="40"
       fill={isFilled ? 'red' : 'none'}
       stroke="red"
       strokeWidth="2"

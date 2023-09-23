@@ -2,7 +2,7 @@ import enshp7 from'./images/enshp7.jpg'
 
 export const p7={
     id:7,
-    author:'Альберта Эйнштейна',
+    author:'Альберт Эйнштейн',
     img: enshp7,
     citates: [
       

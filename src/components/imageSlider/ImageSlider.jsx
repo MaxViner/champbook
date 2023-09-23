@@ -11,7 +11,7 @@ export const ImageSlider = ({ imageData, toggleExpand, expanded }) => {
   return (
       <main className={styles.main}>
         <Link to={HOME_ROUTE}>
-          <img src={exit} width={'30px'} alt="exit" className={styles.exit} />
+          <img src={exit} alt="exit" className={styles.exit} />
         </Link>
         <SlideItem {...imageData} expanded={expanded} toggleExpand={toggleExpand} 
         />

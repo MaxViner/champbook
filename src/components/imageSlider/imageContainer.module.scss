@@ -9,13 +9,18 @@ main{
     flex-direction: column;
     margin: 0 auto;
     position: relative;
+
 }
 .exit{
     position: absolute;
-    top: 50px;
+    top: 70px;
     left: 30px;
+    margin-top: 20px;
+    width: 5vw;
     z-index: 99999;
+    background: transparent;
     transition: 0.5s ease-in-out;
+
 }
 .exit:hover{
     transform: scale(1.2);
@@ -30,6 +35,7 @@ main{
         padding: 0;
         position: relative;
         >figcaption{
+            font-family: Croissant One;
             position: absolute;
             bottom: 5%;
             width: 90%;
@@ -39,7 +45,7 @@ main{
             font-size: 36px;
             color: rgb(255, 250, 250);
             font-weight: 700;
-            text-shadow: 0 0 10px #ffd700, 1px 1px 20px yellow, 1px 1px 20px rgb(255, 13, 0);
+            text-shadow: 3px 1px 5px red, -6px -4px 10px yellow, 0px 0px 30px gold;
             backdrop-filter: blur(3px);
             @media screen and (max-width:768px) {
                 font-size: 22px;
@@ -89,12 +95,16 @@ main{
     }
 }
 .text{
+    font-family: Merriweather;
     width: 100%;
     text-overflow: ellipsis;
     font-size: 18px;
     transition: max-height 0.9s ease-in-out; /* Add transition property */
     max-height: 300px; /* Set initial max-height */
     backdrop-filter: blur(2px);
+    @media screen and (min-width:1220px) {
+        font-size: 22px;
+    }
     @media screen and (max-width:768px) {
         font-size: 16px;
     }
@@ -113,7 +123,7 @@ main{
 }
 
 .expanded {
-    max-height: max-content; /* Set max-height to max-content when expanded */
+    max-height: max-content; 
   }
 .readMore{
     margin-top: 30px;
@@ -151,24 +161,28 @@ main{
     display: none;
     opacity: 0;
     transition: 0.5s ease-in-out;
+    
 }
 
 .open.citateList, .open.links{
     opacity: 1;
     width: 95%;
     margin-top: 20px;
-   display: flex;
-   text-align: left;
-   flex-direction: column;
-   align-items: flex-start;
-   gap: 5px;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
 }
 
 .citateItem{
     width: 100%;
-    font-size: 22px;
+    font-size: 20px;
     @media screen and (max-width:768px) {
         font-size: 16px;
+    }
+    @media screen and (min-width:1220px) {
+        font-size: 22px;
     }
 }
 .open.history{
@@ -176,7 +190,7 @@ main{
     width: 175%;
     margin-right: 100%;
    display: flex;
-   @media screen and (max-width:768px) {
+     @media screen and (max-width:768px) {
     width: 95%;
     margin-right: 0;
    }
@@ -184,7 +198,21 @@ main{
 .marginTop.history{
     margin-top: 30vh;
 }
-
+.link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    a{
+        img{
+            :hover{
+                transform: scale(1.5);
+                box-shadow: 1px 1px 40px red;
+            }
+        }
+    }
+    
+}
 .slide{
     overflow-x: hidden;
     box-sizing: border-box;

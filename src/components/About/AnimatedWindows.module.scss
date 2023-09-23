@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: none;
   }
   button{
     border-radius: 20px;
@@ -68,7 +69,6 @@
     transform: scale(1.1);
     box-shadow: 1px 2px 10px gold, 1px 0px 15px red;
     background-color: rgba(0, 249, 254, 0.211);
-
   }
   
   .ABout__button{
@@ -91,7 +91,6 @@
     justify-content:center;
     flex-direction: column;
     font-size: 22px;
-    background: rgba(249, 1, 1, 0.142);
     border-radius: 15px;
   }
   .visible {

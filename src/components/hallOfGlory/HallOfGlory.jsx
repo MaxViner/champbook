@@ -5,7 +5,6 @@ import styles from './HallOfGlory.modue.scss';
 import SliderFooter from '../footer/Footer';
 import { useSelector } from 'react-redux';
 import { redirect } from 'react-router-dom';
-import { shufflePages } from '../../utils/shufflePages';
 export default function HallOfGlory({ toglePicked }) {
   const pages = useSelector((state) => state.pages);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

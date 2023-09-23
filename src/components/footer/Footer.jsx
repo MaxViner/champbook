@@ -4,8 +4,11 @@ import next from '../../assets/camon/next.png'
  const SliderFooter = ({ Data, currentImageIndex, handleNextImage, handleImageChange,handlePrevImage }) => {
   return (
     <footer className={styles.footer}>
-      <button className={styles.prev} onClick={handlePrevImage}>
-        <img src={next}></img>
+      <button className={styles.prev} 
+      onClick={handlePrevImage}>
+        <img 
+        src={next}>
+        </img>
         </button>
       <input
         className={styles.input}

@@ -129,8 +129,8 @@ export const SlideItem = React.memo(
                   links.map((item, index) => {
                     return (
                       <li className={styles.link} key={index}>
-                        {index + 1} -
-                        <a href={item} target="_blank" rel="noreferrer">
+                        <span> {index + 1} - {item[0]}</span>
+                        <a href={item[1]} target="_blank" rel="noreferrer">
                           <img src={linksIcon} alt="" width={40} />
                         </a>
                       </li>
