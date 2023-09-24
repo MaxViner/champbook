@@ -8,7 +8,9 @@ import styles from '../AnimatedWindows.module.scss';
 const FavoriteWindow = () => {
   return (
       <Link to={FAVORITE_ROUTE}>
-    <button className={`${styles.window} ${styles.window5} ${styles.favorites}`}>
+    <button 
+    onClick={()=>{window.scrollTo({ top: 0, behavior: 'smooth' });}}
+    className={`${styles.window} ${styles.window5} ${styles.favorites}`}>
           
           <h2>Избранное</h2>
      
