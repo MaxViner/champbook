@@ -8,11 +8,14 @@ import { SlideItem } from '../imageSlider/SlideItem';
 import exit from '../../assets/camon/exit.jpg'
 import { Link } from 'react-router-dom';
 import { HOME_ROUTE } from '../../routes/routes';
-
+import HeartLoader from '../UI/HeartLoader/HeartLoader';
+import LoadText from '../UI/LoadText/LoadText';
+import BlinkedText from '../UI/BlinkedText/BlinkedText';
 export default function Favorite() {
   const [isChecked, setIsCHecked]=useState(false)
   const [checkedPage, setCheckedPage]=useState({})
   const [checkedNumber, setCheckedNumber]=useState(0)
+  const [loading, setLoading]=useState(true)
 
   const pages = useSelector((state) => state.pages);
   const [favorites, setFavorites]=useState(getFavorites())
@@ -30,8 +33,18 @@ export default function Favorite() {
       }
   )
 })
- 
-console.log(isChecked);
+
+  useEffect(
+    ()=>
+    {
+      setTimeout(
+        ()=>{
+          setLoading(false)
+        },
+        8000
+      )
+    },[]
+  )
 
  const HandleOpen=(page, FavorCitateNumber)=>{
   setCheckedPage(page)
@@ -70,13 +83,20 @@ console.log(isChecked);
       }  
       } />
     :
+    loading?
+    <>
+    <LoadText data={'Favorites'}
+      className={styles.LoadText}/>
+    <HeartLoader/>
+    </>
+    :
     <main className={styles.Favorites}>
       <Link to={HOME_ROUTE}>
       <img src={exit} width={'30px'} alt="exit" className={styles.exit} />
       </Link>
-    <h1 className={styles.Favorites__title}>
-      Favorites
-    </h1>
+    <div className={styles.Favorites__title}>
+     <BlinkedText text='Favorites'/>
+    </div>
 
   <ul className={styles.List}>
    {citates.map((citate,index)=>{

@@ -33,7 +33,8 @@ const ModalWindow = () => {
           </p>
         )}
       </div>
-      <button className={styles.modal__btn} onClick={() => {
+      <button 
+      className={styles.modal__btn} onClick={() => {
         setClose(true);
         closeModalHandler();
       }}>

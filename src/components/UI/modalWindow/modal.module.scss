@@ -18,11 +18,18 @@
         display: flex;
         align-items: center;
     }
-    button{
+    &__btn{
+        color:red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.634);
         text-align: center;
         width: 80%;
+        padding: 10px;
         border-radius: 16px;
         font-size: 22px;
+        margin-bottom: 50px;
     }
     p{
         text-align: center;

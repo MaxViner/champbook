@@ -2,13 +2,15 @@
     margin-top: 50px;
     min-height: 100vh;
     &__title{
-        color: red;
+       width: max-content;
+       margin-left: 50%;
+       transform: translate(-50%);
     }
     position: relative;
 }
 .exit{
     position: absolute;
-    top: 50px;
+    top: 20px;
     left: 20px;
     cursor: pointer;
     transition: 0.5s ease-in-out;
@@ -69,4 +71,14 @@
 .deleteicon:hover{
     transform: rotate(180deg) scale(1.1);
     
+}
+.LoadText{
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    text-align: center;
+     margin-top: 50px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    overflow: hidden;
 }

@@ -1,0 +1,28 @@
+
+
+.LoadText{
+    width: max-content;
+    position: relative;
+    color: #333;
+    font-size: 1.5em;
+    letter-spacing: 5px;
+    line-height: 1.4;
+    padding: 0;
+    overflow: hidden;
+}
+
+.LoadText::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 1;
+    width: 100%;
+    color: salmon;
+    animation: lod 8s linear infinite;
+    overflow: hidden;
+}
+
+@keyframes lod{
+   0%{ width: 0;}
+   100%{width: 95%;}
+}

@@ -1,0 +1,26 @@
+$width:350px;
+$height:350px;
+@media screen and (min-width:768px) {
+    $width:650px;
+    $height:650px;
+}
+@media screen and (min-width:1220px) {
+    $width:1000px;
+    $height:1000px;
+}
+
+.HeartLoader{
+    width:100vw;
+    height: 100vh;
+    transform: rotate(180deg);
+    position: relative;
+    
+}
+.canvas{
+    position: absolute;
+    bottom:100px;
+    left:calc(50% - $width/2);
+    width: $width;
+    height: $height;
+    
+}

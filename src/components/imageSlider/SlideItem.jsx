@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import styles from './imageContainer.module.scss';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Button from '../UI/Button/Button';
 import biographyIkon from '../../assets/camon/biographyIcon.png';
 import citatsesIkon from '../../assets/camon/citatesIcon.png';
