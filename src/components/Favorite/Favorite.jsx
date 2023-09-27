@@ -11,6 +11,7 @@ import { HOME_ROUTE } from '../../routes/routes';
 import HeartLoader from '../UI/HeartLoader/HeartLoader';
 import LoadText from '../UI/LoadText/LoadText';
 import BlinkedText from '../UI/BlinkedText/BlinkedText';
+import Card from '../UI/Card/Card';
 export default function Favorite() {
   const [isChecked, setIsCHecked]=useState(false)
   const [checkedPage, setCheckedPage]=useState({})
@@ -19,20 +20,39 @@ export default function Favorite() {
 
   const pages = useSelector((state) => state.pages);
   const [favorites, setFavorites]=useState(getFavorites())
+  console.log('favorites');
+  console.log(favorites);
 
   let citates=[]
 
   favorites.forEach(item => {
-    let page= pages.find((page)=>page?.id===item?.id)
-    let FavorCitate=page?.citates.find((citate)=>citate?.number===item?.number)
+    let page = pages.find((page)=>page?.id===item?.id)
+    let FavorCitates = []
+    for (let index = 0; index < item.numbers.length; index++) {
+    
+
+      let citate = page?.citates.find(
+        (citate)=>{
+           return citate.number === item.numbers[index]
+        }
+      )
+      FavorCitates.push(
+        citate
+      )
+      
+    }
+   
+
     citates.push(
       {
         page:page,   
-        FavorCitate: FavorCitate?.text,
-        FavorCitateNumber:item.number,
+        FavorCitates: FavorCitates,
       }
   )
-})
+}
+)
+console.log('citates');
+console.log(citates);
 
   useEffect(
     ()=>
@@ -97,29 +117,30 @@ export default function Favorite() {
     <div className={styles.Favorites__title}>
      <BlinkedText text='Favorites'/>
     </div>
-
+    
   <ul className={styles.List}>
    {citates.map((citate,index)=>{
-    console.log(citate);
+    
     return   <li key={index}
-              className={styles.List__item}>   
-            <p>
-                {citate.FavorCitate}
-              </p>
-                <span className={styles.List__item__author}>
-                © {citate.page.author} 
-
+              className={styles.List__item}> 
+                <Card 
+                  img={citate.page.img}
+                  content={citate.FavorCitates}
+                  id={citate.page.id} 
+                  author={`© ${citate.page.author}`}>
+                </Card>  
+           
+{/* 
                 <img src={open} alt="open" role='button'
                  className={styles.List__item__icon}
                 onClick={()=>HandleOpen(citate.page, citate.FavorCitateNumber)}
                 />
-              </span>
               <img src={deleteicon} 
               onClick={()=>{
                 removeFromFavorites(citate.page.id, citate.FavorCitateNumber)
                 setFavorites(getFavorites())
               }}
-              alt="delete" className={styles.deleteicon} width={'30px'}/>
+              alt="delete" className={styles.deleteicon} width={'30px'}/> */}
           </li>
    })}
   </ul>

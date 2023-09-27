@@ -19,6 +19,6 @@ import { p18 } from "./p18";
 import { p19 } from "./p19";
 import { p20 } from "./p20";
 
-export const pages=[p5,p1,p2,p3,p4,p6,p7,p8,p9,p10,p11
+export const pages=[p5,p1,p2,p3,p4,p6,p7,p8,p9,p10,p11,p15,p19
     // ,p12,p13,p14,p15,p16,p17,p18,p19,p20
 ]

@@ -19,23 +19,35 @@
     transform: scale(1.2);
 }
 .List{
+    margin: 0 auto;
+    width: 90%;
     margin-top: 50px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 30px;
-    align-items: center;
+    justify-content: center;
     list-style: none;
     margin-bottom: 50px;
+    @media screen and (max-width:800px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     &__item{
-        padding: 12px 50px 12px 10px;
+        background: transparent;
+        padding: 0;
+        margin-top: 0;
+        // border: 1px solid rgb(48, 255, 7);
+
+        // padding: 12px 50px 12px 10px;
         position: relative;
         font-size: 26px;
         min-height: 150px;
-        width: 90%;
+        width: 100%;
+        height: max-content;
         color: floralwhite;
         border-radius: 12px;
-        background-color: rgba(245, 245, 245, 0.1);
-        box-shadow: 3px 3px 5px  red, 1px 1px 10px gold, 1px 1px 15px yellow;
+        // box-shadow: 3px 3px 5px  red, 1px 1px 10px gold, 1px 1px 15px yellow;
         &__author{
             margin-top: 12px;
             display: flex;

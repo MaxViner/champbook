@@ -32,7 +32,8 @@ export const SlideItem = React.memo(
     const [linksIsOpen, setLinksIsOpen] = useState(false);
     const randomIndex = useMemo(() => {
       return citateNumber || (citates && Math.floor(Math.random() * citates.length));
-    }, [citateNumber, citates]);    const [isFilled, setIsFilled] = useState(false);
+    }, [citateNumber, citates]);   
+    const [isFilled, setIsFilled] = useState(false);
     console.log(randomIndex);
     console.log('randomIndex');
     const location = useLocation();

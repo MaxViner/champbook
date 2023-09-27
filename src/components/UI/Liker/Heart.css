@@ -5,4 +5,14 @@
 svg{
     width: 8vw;
     height: 8vw;
+    max-width: 40px;
+    max-height: 40px;
+   
+}
+
+@media screen and(min-width:800px) {
+    svg{
+    width: 4vw;
+     height: 4vw;
+    }
 }
