@@ -22,7 +22,7 @@ export const Like = ({id,number,isFilled,setIsFilled, onClick}) => {
 };
 
 
-export const LikeSection = React.memo(({ id, randomIndex, isFilled, isFavorite, setIsFilled }) => {
+export const LikeSection = React.memo(({ id, citateNumber, isFilled, isFavorite, setIsFilled }) => {
   const LikeHandler = (id, number) => {
     const isFavorite = checkFavorite(id, number);
     console.log(id, number);
@@ -42,9 +42,9 @@ export const LikeSection = React.memo(({ id, randomIndex, isFilled, isFavorite, 
     <>
     <div className='heart'>
       <Like
-        onClick={() => LikeHandler(id, randomIndex)}
+        onClick={() => LikeHandler(id, citateNumber)}
         id={id}
-        number={randomIndex}
+        number={citateNumber}
         isFilled={isFavorite || isFilled}
         setIsFilled={setIsFilled}
       />

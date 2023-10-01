@@ -32,13 +32,13 @@
           // console.log(filteredfavorites);
           filteredfavorites.push({ id: id, numbers: updatedFavorites });    
           localStorage.setItem('favorites', JSON.stringify(filteredfavorites));
-          //  console.log('favorites');
-          //  console.log(filteredfavorites);
+           console.log('favorites');
+           console.log(filteredfavorites);
        
       } else {
         favorites.push({ id: id, numbers: [number] });
-        // console.log('Favorites');
-        // console.log(favorites);
+        console.log('Favorites');
+        console.log(favorites);
         localStorage.setItem('favorites', JSON.stringify(favorites));
       }
     } catch (error) {
@@ -68,8 +68,8 @@
       const updatedFavorites = ExistingFavorites.numbers.filter((favorite) => favorite !== number);
       console.log(`remove ${id} ${number}`);
       ExistingFavorites.numbers = updatedFavorites;
-      // console.log('ExistingFavorites');
-      // console.log(ExistingFavorites);
+      console.log('ExistingFavorites');
+      console.log(favorites);
       localStorage.setItem('favorites', JSON.stringify(favorites));
     } catch (error) {
       // Handle the error gracefully

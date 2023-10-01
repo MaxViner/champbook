@@ -18,6 +18,7 @@ const AnimatedWindows = () => {
       <div className={styles.AnimatedWindows}>
         <BlinkedText text='HALLOFFAME'/>
         <div className={styles.btns}>
+
         <AboutWindow />
         <HowToUseWindow />
         <RandomQuoteWindow />

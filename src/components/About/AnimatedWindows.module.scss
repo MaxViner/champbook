@@ -64,12 +64,9 @@
     transition: 0.7s ease-in-out;
     border: none;
     text-decoration: none;
+    
   }
-  .window:hover{
-    transform: scale(1.1);
-    box-shadow: 1px 2px 10px gold, 1px 0px 15px red;
-    background-color: rgba(0, 249, 254, 0.211);
-  }
+
   
   .ABout__button{
     cursor: pointer;
@@ -137,11 +134,7 @@
         cursor: pointer;
         >span{
             text-decoration: underline;
-            :hover{
-                text-shadow: 2px 3px 15px gold;
-                color: rgba(255, 0, 0, 0.732);
-                transform: scale(1.1);
-            }
+
         }
     }
    
@@ -156,9 +149,6 @@
     backdrop-filter: blur(3px);
     font-size: 22px;
     text-shadow: 1px 1px 5px gold, 1px 1px 10px red;
-    :hover{
-        transform: scale(1.2);
-    }
 }}
 
 .skroll{

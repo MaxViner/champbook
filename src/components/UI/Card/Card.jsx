@@ -2,8 +2,7 @@ import React from 'react'
 import styles from './Card.module.scss'
 import CitateItem from '../citates/citateItem/CitateItem';
 export default function Card({content, img, author, id}) {
-    console.log('content');
-    console.log(content);
+
 
   return (
     <div className={styles.card} >
@@ -22,8 +21,8 @@ export default function Card({content, img, author, id}) {
                 <div className={styles.content}>
                     <ul className={styles.citates}>
 
-                    {content && content.map((citate)=>{
-                        return <li>
+                    {content && content.map((citate, index)=>{
+                        return <li key={index}>
                             <CitateItem
                             citateNumber={citate?.number}
                             id={id}

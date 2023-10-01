@@ -10,6 +10,7 @@ import { checkFavorite } from '../../utils/localStorage';
 import exit from '../../assets/camon/exit.jpg'
 import { FAVORITE_ROUTE } from '../../routes/routes';
 import sep from '../../assets/camon/sep.png'
+import CitateItem from '../UI/citates/citateItem/CitateItem';
 
 
 
@@ -18,10 +19,8 @@ export const SlideItem = React.memo(
     id,
     img,
     citates,
-    text,
-    description,
     author,
-    expanded,
+    text,
     Life_history,
     links,
     HandleClose,
@@ -30,12 +29,11 @@ export const SlideItem = React.memo(
     const [citatesIsOpen, setCitatesIsOpen] = useState(false);
     const [biographyIsOpen, setBiographyIsOpen] = useState(false);
     const [linksIsOpen, setLinksIsOpen] = useState(false);
-    const randomIndex = useMemo(() => {
+    let CitateNumber = useMemo(() => {
       return citateNumber || (citates && Math.floor(Math.random() * citates.length));
     }, [citateNumber, citates]);   
     const [isFilled, setIsFilled] = useState(false);
-    console.log(randomIndex);
-    console.log('randomIndex');
+
     const location = useLocation();
    
     useEffect(() => {
@@ -46,9 +44,12 @@ export const SlideItem = React.memo(
     }, [id]);
     
     useEffect(() => {
-      console.log(citateNumber);
-      setIsFilled(checkFavorite(id, randomIndex));
-    }, [randomIndex]);
+      console.log('citateNumber');
+
+      console.log(CitateNumber);
+      setIsFilled(checkFavorite(id, CitateNumber));
+    }, [citateNumber]);
+    console.log(`id=${id}`);
 
     return (
       <div className={`${styles.slide}`}>
@@ -63,13 +64,13 @@ export const SlideItem = React.memo(
             <div className={styles.heart}> 
             <LikeSection
                   id={id}
-                  randomIndex={randomIndex}
+                  citateNumber={CitateNumber}
                   setIsFilled={setIsFilled}
                   isFilled={isFilled}
                 />
             </div>
             <figcaption className={styles.imageContainer__text}>
-              «{citates && citates[randomIndex].text}»
+              «{citates && citates[CitateNumber]?.text}»
               <br />
               © {author}
             </figcaption>
@@ -77,15 +78,18 @@ export const SlideItem = React.memo(
           </figure>
         </div>
         <img src={sep} alt="" width={'30px'} className={styles.sep} />
-        <div className={`${styles.textContainer} ${expanded ? styles.expanded : ''}`}>
-          <div className={`${styles.text} ${expanded ? styles.expanded : ''}`}>
-            <p>{text || description}</p>
+        <div className={`${styles.textContainer} ${styles.expanded}`}>
+          <div className={`${styles.text} ${styles.expanded }`}>
+           {
+            text &&
+            <p>{ text}</p>
+           } 
             <div className={styles.btnContainer}>
               <div className={styles.row1}>
                 <Button
                   text={`больше цитат`}
                   onClick={() => {
-                    !citatesIsOpen ? setCitatesIsOpen(true) : setCitatesIsOpen(false);
+                    !+citatesIsOpen ? setCitatesIsOpen(true) : setCitatesIsOpen(false);
                   }}
                   icon={biographyIkon}
                 />
@@ -94,7 +98,11 @@ export const SlideItem = React.memo(
                     citates.map((item, index) => {
                       return (
                         <li className={styles.citateItem} key={index}>
-                          {item.number + 1} - {item.text}
+                          <CitateItem 
+                          citate={item.text}
+                          citateNumber={index}
+                          id={id}
+                          ></CitateItem>
                         </li>
                       );
                     })}

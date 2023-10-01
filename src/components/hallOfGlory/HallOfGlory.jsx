@@ -30,7 +30,6 @@ export default function HallOfGlory({ toglePicked }) {
     if (currentImageIndex !== 0) {
       setCurrentImageIndex((prevIndex) => (prevIndex - 1) % pages.length);
     } else {
-      console.log('red');
       redirect('/')
     }
     setExpanded(false);
@@ -48,6 +47,15 @@ export default function HallOfGlory({ toglePicked }) {
     <div className={styles.HallOfGlory}>
       <div className={styles.Content}>
         <ImageSlider
+         id={pages[currentImageIndex].id}
+         img={pages[currentImageIndex].img}
+         text={pages[currentImageIndex].text}
+         citates={pages[currentImageIndex].citates}
+         description={pages[currentImageIndex].description}
+         author={pages[currentImageIndex].author}
+         Life_history={pages[currentImageIndex].Life_history}
+         links={pages[currentImageIndex].links}
+         citateNumber={currentImageIndex}
           imageData={pages[currentImageIndex]}
           expanded={expanded}
           toggleExpand={toggleExpand}

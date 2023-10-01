@@ -9,20 +9,20 @@ import reboot from '../../assets/camon/reboot.jpg'
 export  const Random=({data}) =>{
   const pages = useSelector((state) => state.pages);
   const [randomIndex, setRandomIndex] = useState(Math.floor(Math.random() * pages.length) || 0)
-  console.log(pages);
-  const [expanded, setExpanded] = useState(false);
-
-  const toggleExpand = () => {
-      setTimeout(() => {
-        setExpanded(!expanded);
-      }, 900);
-    }
-  
+   
   return (
     <main className={styles.main}>
-    <SlideItem {...pages[randomIndex] }
-     expanded={expanded}
-     toggleExpand={toggleExpand}/>
+    <SlideItem
+    id={pages[randomIndex].id}
+    img={pages[randomIndex].img}
+    text={pages[randomIndex].text}
+    citates={pages[randomIndex].citates}
+    description={pages[randomIndex].description}
+    author={pages[randomIndex].author}
+    Life_history={pages[randomIndex].Life_history}
+    links={pages[randomIndex].links}
+    citateNumber={randomIndex}
+     />
 
     <div className={styles.btnContainer}>
 

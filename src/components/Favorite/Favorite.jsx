@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { getFavorites, removeFromFavorites } from '../../utils/localStorage';
 import styles from './Favorite.module.scss'
-import open from '../../assets/camon/open.png'
-import deleteicon from '../../assets/camon/delete.jpg'
 import { SlideItem } from '../imageSlider/SlideItem';
 import exit from '../../assets/camon/exit.jpg'
 import { Link } from 'react-router-dom';
@@ -20,8 +18,7 @@ export default function Favorite() {
 
   const pages = useSelector((state) => state.pages);
   const [favorites, setFavorites]=useState(getFavorites())
-  console.log('favorites');
-  console.log(favorites);
+  
 
   let citates=[]
 
@@ -51,8 +48,6 @@ export default function Favorite() {
   )
 }
 )
-console.log('citates');
-console.log(citates);
 
   useEffect(
     ()=>
@@ -127,7 +122,7 @@ console.log(citates);
                   img={citate.page.img}
                   content={citate.FavorCitates}
                   id={citate.page.id} 
-                  author={`© ${citate.page.author}`}>
+                  author={`${citate.page.author}`}>
                 </Card>  
            
 {/* 
