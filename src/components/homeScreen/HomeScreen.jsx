@@ -20,7 +20,7 @@ const HomeScreen = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false)
-    }, 2500)
+    }, 4000)
   }, [])
   return (
     <>

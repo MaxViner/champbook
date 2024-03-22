@@ -47,7 +47,7 @@ export default function Favorite() {
   useEffect(() => {
     setTimeout(() => {
       dispatch(fetchPages())
-    }, 1000)
+    }, 6000)
   }, [dispatch])
 
   const onHeartClick = () => {
