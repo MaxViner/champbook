@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Merriweather:ital@1&family=Poppins&family=Roboto:wght@400;500;700&family=Rubik:ital,wght@0,900;1,800&display=swap');
+@import './assets/styles/base.scss';
+@import './assets/styles/variables.scss';
+
+body {
+  width: 100%;
+  margin: 0;
+  font-family: 'Croissant One', cursive,
+ 'Merriweather', 
+   'Poppins', 
+   'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

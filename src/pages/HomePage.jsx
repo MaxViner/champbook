@@ -1,12 +1,9 @@
 import React from 'react'
-import AnimatedWindows from '../components/About/About';
+import HomeScreen from '../components/homeScreen/HomeScreen'
 export default function HomePage() {
-
   return (
-   <>
-    
-        <AnimatedWindows/>
-      
-   </>
+    <>
+      <HomeScreen />
+    </>
   )
 }

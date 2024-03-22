@@ -1,0 +1,12 @@
+.Logo{
+    background: transparent;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    :hover{
+        transform: scale(1.03);
+        filter: brightness(1.5);
+    }
+    img{
+        transition: 0.5s ease-in-out;
+    }
+}

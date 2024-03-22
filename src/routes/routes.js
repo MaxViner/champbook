@@ -1,6 +1,6 @@
 
 import Favorite from "../components/Favorite/Favorite";
-import HallOfGlory from "../components/hallOfGlory/HallOfGlory";
+import HallOfGlory from "../components/AllQuotes/AllQuotes";
 import { SlideItem } from "../components/imageSlider/SlideItem";
 import  Error404  from "../pages/Error404";
 

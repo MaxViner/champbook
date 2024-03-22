@@ -18,27 +18,19 @@
         return
       }  
       const ExistingFavorites = favorites.find((fav) => fav.id === id);
-      // console.log('ExistingFavorites');
-      // console.log(ExistingFavorites);
-
+      
       if (ExistingFavorites) {
         const updatedFavorites = ExistingFavorites.numbers.concat(number);    
-        // console.log('updatedFavorites');
-        // console.log(updatedFavorites);
-        // console.log('favorites-no-filter');
-        // console.log(favorites);
+      
         let filteredfavorites =  favorites.filter((item)=>item.id !== ExistingFavorites.id)
-          // console.log('favorites-filter');
-          // console.log(filteredfavorites);
+         
           filteredfavorites.push({ id: id, numbers: updatedFavorites });    
           localStorage.setItem('favorites', JSON.stringify(filteredfavorites));
-           console.log('favorites');
-           console.log(filteredfavorites);
-       
+          
+      
       } else {
         favorites.push({ id: id, numbers: [number] });
-        console.log('Favorites');
-        console.log(favorites);
+
         localStorage.setItem('favorites', JSON.stringify(favorites));
       }
     } catch (error) {
@@ -50,8 +42,7 @@
   export const getFavorites = () => {
     try {
       const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-      console.log('favorites');
-      console.log(favorites);
+     
 
       return favorites;
     } catch (error) {
@@ -63,16 +54,27 @@
 
   export const removeFromFavorites = (id, number) => {
     try {
-      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-      let ExistingFavorites = favorites.find((item) => item.id === id) || {};
-      const updatedFavorites = ExistingFavorites.numbers.filter((favorite) => favorite !== number);
-      console.log(`remove ${id} ${number}`);
-      ExistingFavorites.numbers = updatedFavorites;
-      console.log('ExistingFavorites');
-      console.log(favorites);
-      localStorage.setItem('favorites', JSON.stringify(favorites));
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        
+        let existingFavoriteIndex = favorites.findIndex((item) => item.id === id);
+        
+        if (existingFavoriteIndex !== -1) {
+            let existingFavorite = favorites[existingFavoriteIndex];
+            const updatedNumbers = existingFavorite.numbers.filter((favorite) => favorite !== number);
+            
+            if (updatedNumbers.length === 0) {
+                favorites.splice(existingFavoriteIndex, 1);
+            } else {
+                existingFavorite.numbers = updatedNumbers;
+            }
+        }
+
+        console.log(`Remove ${id} ${number}`);
+        console.log('Existing favorites:');
+        
+        localStorage.setItem('favorites', JSON.stringify(favorites));
     } catch (error) {
-      // Handle the error gracefully
-      console.error('Error accessing localStorage:', error);
+        // Handle the error gracefully
+        console.error('Error accessing localStorage:', error);
     }
-  };
+};

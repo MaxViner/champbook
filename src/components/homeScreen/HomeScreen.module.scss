@@ -1,0 +1,245 @@
+@import '../../assets/styles/variables.scss';
+.Logo{
+  position: absolute;
+  left: 56px;
+  top: 32px;
+}
+.homeScreen{
+  width: 100%;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  overflow: hidden;
+  &__Title{
+    color:$text-color;
+    font-family: Gilroy;
+    font-size: 48px;
+    font-weight: 600;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 64px;
+    @media screen and (max-width: 1280px) {
+      display: none;
+    }
+  img{
+    margin-top: 20px;
+    border-radius: 20%;
+}
+  }
+  &__Content{
+    display: grid;
+    grid-template-columns: 13fr 8fr;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-around;
+    height: 100dvh;
+    min-height: 100dvh;
+    padding: 32px 56px;
+    overflow-y: scroll;
+    position: relative;
+
+    @media screen and (max-width: 1280px) {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 16px;
+      padding-top: 120px;
+    }
+    &__Left{
+      padding-top: 88px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+      width: 100%;
+      gap: 24px;
+      @media screen and (max-width: 1280px) {
+       height: max-content;
+      }
+      p{
+      font-family: Gilroy;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      text-align: left;
+      @media screen and (max-width: 1280px) {
+        font-size: 16px;
+       }
+      }
+    }
+    &__Right{
+      display: flex;
+      height: 100%;
+      width: 100%;
+      >img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50px;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 1280px) {
+      max-height: 404px;
+      }
+      @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+      }
+    }
+    @media screen and (max-width: 1280px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+}
+
+  .Loader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    height: 1000px;
+    padding-top: 20%;
+    font-size: 42px;
+}
+.SectionsList{
+  display: grid;
+  grid-template-columns: 9fr 7fr;
+  gap: 16px;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-top:calc(300px + 10dvh) ;
+  }
+  
+}
+.section{
+  height: 200px;
+  width: 100%;
+  background-color: $acceint-bg;
+  padding: 16px;
+  border-radius: 24px;
+  justify-content: space-between;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.5s ease-in-out;
+  box-shadow: 2px 2px 10px $acceint-color;
+  cursor: pointer;
+  &:hover{
+    button{
+      background-color: $text-color;
+    }
+    background-color: $acceint-color;
+  }
+  button{
+    svg{
+      transition: 0.5s ease-in-out;
+      &:hover{
+        path{
+            fill:$acceint-color;
+        }
+      }
+  }
+  }
+  &__Right{
+    width: 100%;
+    background-color: $acceint-bg;
+    padding: 16px;
+    border-radius: 24px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    box-shadow: 2px 2px 10px $acceint-color;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: $text-color;
+    overflow: hidden;
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 200px;
+      align-items: center;
+    }
+    &__btn{
+      z-index: 333;
+    }
+    h4{
+      color: $text-color;
+      font-family: Gilroy;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      text-align: left;
+      width: 60%;
+  
+    }
+    &__form1{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+    &__form2{
+      position: absolute;
+      top: 200px;
+      z-index: 0;
+      right: 0px;
+    }
+    button{
+      z-index: 444;
+    }
+  }
+  h4{
+    color: $text-color;
+    font-family: Gilroy;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: left;
+    width: 60%;
+
+  }
+}
+
+.visible{
+  opacity: 1;
+  transform: rotateY(0deg);
+  transition: 0.7s ease-in-out;
+}
+.hidden{
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: 0.7s ease-in-out;
+  position: absolute;
+  z-index: -3;
+
+}
+
+.closeBtn{    
+width: 159px;
+height: 64px;
+font-family: Gilroy;
+font-size: 24px;
+font-weight: 500;
+text-align: left;
+padding: 16px 32px;
+color: $text-color;
+border-radius: 20px;
+background-color: $acceint-color;
+transition: 0.5s ease-in-out;
+cursor: pointer;
+&:hover{
+  transform: scale(1.08);
+}
+  
+}

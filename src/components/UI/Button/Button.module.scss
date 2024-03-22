@@ -1,0 +1,53 @@
+@import '../../../assets/styles/variables.scss';
+
+.Button {
+    display: flex;
+    height: 160px;
+    align-items: flex-end;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 24px;
+    color: $text-color;
+    background-color: $acceint-bg;
+    width: 100%;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    &:hover{
+      transform: scale(1.03);
+      background-color: $acceint-color;
+      >svg{
+        background-color: $text-color;
+        path{
+          fill:$acceint-color;
+        }
+    }
+  }
+
+
+    >svg{
+      margin-bottom: 5px;
+      width: 48px;
+      height: 48px;
+      transform: rotate(90deg);
+      border-radius: 50%;
+      transition: 0.5s ease-in-out;
+
+      background-color: $acceint-color;
+      path{
+        transition: 0.5s ease-in-out;
+
+        fill:$text-color;
+      }
+  }
+  
+  &__text {
+    font-size: 20px;
+    font-weight: 400;
+  
+  @media screen and (min-width:1220px) {
+      font-size: 28px;
+      font-weight: 600;
+    }
+  }
+}

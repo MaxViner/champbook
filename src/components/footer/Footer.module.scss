@@ -1,3 +1,4 @@
+@import '../../assets/styles/variables.scss';
 .footer{
     display: flex;
     justify-content: space-around;
@@ -13,8 +14,8 @@
     border-radius: 8px;
     text-align: center;
     background: transparent;
-    box-shadow: 3px 1px 5px red, -6px -4px 10px yellow, 0px 0px 30px gold;
-    color: red;
+    box-shadow:  -6px -4px 10px $text-color, 0px 0px 30px $acceint-color;
+    color: $acceint-color;
     @media screen and (max-width:768px) {
         font-size: 16px;  
     }
@@ -23,14 +24,13 @@
     border: none;
     cursor: pointer;
     background-color:transparent;
-    box-shadow: 3px 1px 5px red, -6px -4px 10px yellow, 0px 0px 30px gold;
     >img{
         width: 5vw;
         height: 5vw;
     }
     :hover{
         transform: scale(1.1);
-        color: gold;
+        color: $acceint-color;
     }
 }
 .prev{

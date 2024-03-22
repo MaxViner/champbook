@@ -1,0 +1,47 @@
+
+@import './assets/styles/variables.scss';
+
+.App {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100dvh;
+  height: 108dvh;
+  overflow: scroll;
+  background: $bg-color;
+  color: $text-color;
+  background-image: url('./assets//camon//main.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.songText{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 1.5em;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h1,p{
+  line-height: 1.5;
+}
+body{
+  overflow-x: hidden;
+  overflow: auto;
+}
+  ::-webkit-scrollbar {
+    width: 0.1rem;
+    height: 0.1rem;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
