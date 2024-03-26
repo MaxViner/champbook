@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import styles from './Random.module.scss'
+import styles from './RandomQuote.module.scss'
 import { QuoteItem } from '../commons/quoteItem/QuoteItem'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -10,7 +10,7 @@ import LoadText from '../UI/loadingText/LoadText'
 import Loader from '../UI/Loader/Loader'
 import useRandomPage from '../../hooks/useRandomPage'
 
-export const RandomQuote = () => {
+export default function RandomQuote () {
   const dispatch = useDispatch()
 
   const { pages } = useSelector((state) => state.pages)
