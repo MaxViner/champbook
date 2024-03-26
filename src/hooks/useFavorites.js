@@ -43,7 +43,7 @@ const useFavorites = () => {
     }, 6000);
   }, [dispatch]);
 
-  return { favorites, citates, upadateFavorites, isLoading };
+  return { citates, upadateFavorites, isLoading };
 };
 
 export default useFavorites;

@@ -24,7 +24,6 @@ export default function Favorite() {
       ) :
       citates.length === 0 ? (
         <>
-
            <Link to={HOME_ROUTE}>
             <button className={styles.exit}>
               <Logo onClick />
