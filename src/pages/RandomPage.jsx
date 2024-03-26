@@ -1,9 +1,9 @@
 import React from 'react'
-import { Random } from '../components/RandomQuote/Random'
+import { Random } from '../components/randomQuote/Random'
 export default function RandomPage() {
   return (
-    <div>
+  
       <Random />
-    </div>
+    
   )
 }

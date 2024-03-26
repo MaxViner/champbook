@@ -1,3 +1,4 @@
+@import '../../assets/styles/variables.scss';
 .main {
     width: 100%;
     height: max-content;
@@ -8,31 +9,53 @@
     align-items: center;
   }
   
-  .btnContainer {
-    width: 60%;
-    display: flex;
-    gap: 20%;
-    justify-content: space-between;
-    margin-bottom: 50px;
-  }
-  
-  .exit,
-  .reboot {
-    background: transparent;
-    width: 50px;
+  .exit{
+    z-index: 55;
+    position: absolute;
+    left: 20px;
+    top: 20px;
     border: none;
-    border-radius: 50%;
-    transition:  0.9s ease-in-out;
-  }
+    background: transparent;
   
-  .exit img,
-  .reboot img {
-    width: 100%;
-  }
+    :hover{
+        text-shadow: 2px 3px 15px gold;
+        color: rgba(255, 0, 0, 0.732);
+        transform: scale(1.1);
+    }
+}
+.reload{
+  z-index: 55;
+  position: absolute;
+  left: 20px;
+  top: 60px;
+  border: none;
+  background: transparent;
+  color: $text-color;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
   
-  .exit:hover,
-  .reboot:hover {
-    transform: scale(1.2);
-    box-shadow: 0px 0px 10px red, 0px 0px 20px gold;
-    background: radial-gradient(circle at top left, rgba(255, 0, 0, 0.589), rgba(255, 255, 0, 0.523));
+  :hover{
+    transform: scale(1.1);
+    background-color: rgba(240, 248, 255, 0.158);
+    box-shadow: 2px 2px 20px $text-color;
+    color: $acceint-color;     
+
   }
+ span{
+   transition: 0.5s ease-in-out;
+   :hover{
+        color: $acceint-color;     
+    }
+ }
+}
+
+  .Loader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    height: 1000px;
+    padding-top: 40%;
+    font-size: 42px;
+}

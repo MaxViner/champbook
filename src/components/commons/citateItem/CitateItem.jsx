@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './CitateItem.module.scss'
-import { LikeSection } from '../../Liker/Like'
-import { checkFavorite } from '../../../../utils/localStorage'
+import { LikeSection } from '../../UI/liker/Like'
+import { checkFavorite } from '../../../utils/localStorage'
 
 export default function CitateItem({
   citate,

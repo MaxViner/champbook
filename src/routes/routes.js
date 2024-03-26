@@ -1,12 +1,9 @@
 
-import Favorite from "../components/Favorite/Favorite";
-import HallOfGlory from "../components/AllQuotes/AllQuotes";
-import { SlideItem } from "../components/imageSlider/SlideItem";
+import Favorite from "../components/favorites/Favorite";
 import  Error404  from "../pages/Error404";
-
-
 import HomePage from "../pages/HomePage";
 import RandomPage from "../pages/RandomPage";
+import AllQuotesPage from "../pages/AllQuotesPage";
 export const RANDOM_ROUTE='/random'
 export const ALLCITATES_ROUTE='/all'
 export const FAVORITE_ROUTE='/favorites'
@@ -22,15 +19,11 @@ export const HOME_ROUTE = '/'
   },
   {
     path: ALLCITATES_ROUTE,
-    element: <HallOfGlory />,
+    element: <AllQuotesPage />,
   },
   {
     path: FAVORITE_ROUTE,
     element: <Favorite />,
-  },
-  {
-    path: `${FAVORITE_ROUTE}/:id`,
-    element: <SlideItem />,
   },
   {
     path: '*',

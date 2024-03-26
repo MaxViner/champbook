@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styles from './HomeScreen.module.scss'
-import ModalWindow from '../UI/modalWindow/modalWindow'
 import { HomeScreenContent } from './content/LeftPart/HomeScreenContent'
 import RandomQuoteWindow from './content/RightPart/RandomQuoteWindow'
 
@@ -81,7 +80,6 @@ const HomeScreen = () => {
               <img src={InstractionImg} alt="InstractionImg" />
             </div>
           </section>
-          <ModalWindow />
         </>
       )}
     </>

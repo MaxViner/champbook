@@ -21,3 +21,17 @@
     padding-top: 40%;
     font-size: 42px;
 }
+.exit{
+    z-index: 55;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border: none;
+    background: transparent;
+  
+    :hover{
+        text-shadow: 2px 3px 15px gold;
+        color: rgba(255, 0, 0, 0.732);
+        transform: scale(1.1);
+    }
+}

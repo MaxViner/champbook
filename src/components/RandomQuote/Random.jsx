@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import styles from './Random.module.scss'
-import { SlideItem } from '../imageSlider/SlideItem'
+import { QuoteItem } from '../commons/quoteItem/QuoteItem'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchPages } from '../../store/slices/pagesSlice'
-import exit from '../../assets/camon/exit.jpg'
-import reboot from '../../assets/camon/reboot.jpg'
+import { HOME_ROUTE } from '../../routes/routes'
+import Logo from '../UI/logo/Logo'
 import LoadText from '../UI/loadingText/LoadText'
 import Loader from '../UI/Loader/Loader'
 import useRandomPage from '../../hooks/useRandomPage'
+
 export const Random = ({}) => {
   const dispatch = useDispatch()
 
   const { pages } = useSelector((state) => state.pages)
 
-  const { randomIndex, randomPage, loadNewRandomPage } = useRandomPage(
+  const { randomPage, loadNewRandomPage } = useRandomPage(
     pages,
     fetchPages,
   )
@@ -23,26 +24,29 @@ export const Random = ({}) => {
     dispatch(fetchPages())
   }, [dispatch])
 
-  console.log('==========pages====================')
-  console.log(pages)
-  console.log('====================================')
-
-  console.log('=====randomIndex========================')
-  console.log(randomIndex)
-  console.log(randomPage)
   const randomQuoteNumber = Math.floor(
     Math.random() * randomPage?.citates?.length,
   )
   return (
     <main className={styles.main}>
-      {!pages[0] ? (
+      {!randomPage ? (
         <div className={styles.Loader}>
           <Loader />
           <LoadText data={'Loading...'} />
         </div>
       ) : (
         <>
-          <SlideItem
+         <Link to={HOME_ROUTE}>
+            <Logo className={styles.exit} />
+          </Link>
+          <button onClick={loadNewRandomPage}
+          className={styles.reload}
+          >
+            <span>
+            Выбрать новую цитату 
+          </span>
+          </button>
+          <QuoteItem
             id={randomPage?.id}
             img={randomPage?.img}
             text={randomPage?.text}
@@ -53,16 +57,7 @@ export const Random = ({}) => {
             links={randomPage?.links}
             citateNumber={randomQuoteNumber}
           />
-          <div className={styles.btnContainer}>
-            <button className={styles.exit}>
-              <Link to={'/'}>
-                <img src={exit} alt="exit" />
-              </Link>
-            </button>
-            <button className={styles.reboot} onClick={loadNewRandomPage}>
-              <img src={reboot} alt="reboot" />
-            </button>
-          </div>
+         
         </>
       )}
     </main>

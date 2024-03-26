@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Footer.module.scss'
-import next from '../../assets/camon/next.png'
+import next from '../../../assets/camon/next.png'
 const SliderFooter = ({
   Data,
   currentImageIndex,

@@ -1,5 +1,5 @@
 
-
+@import '../../../assets/styles/variables.scss';
 .LoadText{
     width: max-content;
     position: relative;
@@ -17,7 +17,7 @@
     top: 0;
     left: 1;
     width: 100%;
-    color: salmon;
+    color: $acceint-color;
     animation: lod 8s linear infinite;
     overflow: hidden;
 }

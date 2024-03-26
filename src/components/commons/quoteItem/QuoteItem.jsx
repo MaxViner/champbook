@@ -1,17 +1,16 @@
 import React, { useEffect, useState, useMemo } from 'react'
-import styles from './imageContainer.module.scss'
+import styles from './QuoteItem.module.scss'
 import { useLocation } from 'react-router-dom'
-import Button from '../UI/Button/Button'
+import Button from '../../UI/UButton/Button'
+import linksIcon from '../../../assets/camon/inkIkon.png'
+import { LikeSection } from '../../UI/liker/Like'
+import { checkFavorite } from '../../../utils/localStorage'
+import exit from '../../../assets/camon/exit.jpg'
+import { FAVORITE_ROUTE } from '../../../routes/routes'
+import sep from '../../../assets/camon/sep.png'
+import CitateItem from '../citateItem/CitateItem'
 
-import linksIcon from '../../assets/camon/inkIkon.png'
-import { LikeSection } from '../UI/Liker/Like'
-import { checkFavorite } from '../../utils/localStorage'
-import exit from '../../assets/camon/exit.jpg'
-import { FAVORITE_ROUTE } from '../../routes/routes'
-import sep from '../../assets/camon/sep.png'
-import CitateItem from '../UI/citates/citateItem/CitateItem'
-
-export const SlideItem = React.memo(
+export const QuoteItem = React.memo(
   ({
     id,
     img,
@@ -26,11 +25,13 @@ export const SlideItem = React.memo(
     const [citatesIsOpen, setCitatesIsOpen] = useState(false)
     const [biographyIsOpen, setBiographyIsOpen] = useState(false)
     const [linksIsOpen, setLinksIsOpen] = useState(false)
+
     let CitateNumber = useMemo(() => {
       return (
         citateNumber || (citates && Math.floor(Math.random() * citates.length))
       )
     }, [citateNumber, citates])
+
     const [isFilled, setIsFilled] = useState(false)
 
     const location = useLocation()
@@ -40,12 +41,10 @@ export const SlideItem = React.memo(
       setBiographyIsOpen(false)
       setCitatesIsOpen(false)
       setLinksIsOpen(false)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }, [id])
 
     useEffect(() => {
-      console.log('citateNumber')
-
-      console.log(CitateNumber)
       setIsFilled(checkFavorite(id, CitateNumber))
     }, [citateNumber])
     console.log(`id=${id}`)
@@ -99,7 +98,8 @@ export const SlideItem = React.memo(
                             citate={item.text}
                             citateNumber={index}
                             id={id}
-                          ></CitateItem>
+                          >
+                          </CitateItem>
                         </li>
                       )
                     })}

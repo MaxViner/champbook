@@ -3,9 +3,7 @@ import styles from './OpenBtn.module.scss'
 export default function OpenBtn({ onClick }) {
   return (
     <button className={styles.OpenBtn} onClick={onClick}>
-      <svg
-        width="24"
-        height="24"
+      <svg   
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

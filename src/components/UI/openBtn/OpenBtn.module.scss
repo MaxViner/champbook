@@ -8,9 +8,16 @@
     transition: 0.5s ease-in-out;
     border: none;
     cursor: pointer;
+    display: flex;
+    padding: 0px;
+    align-items: flex-start;
+
+    justify-content: center;
     z-index: 244;
     svg{
         transition: 0.5s ease-in-out;
+        width: 30px;
+        height: 30px;
         path{
             fill:$acceint-color;
         }

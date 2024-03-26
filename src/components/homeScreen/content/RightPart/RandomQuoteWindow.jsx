@@ -19,6 +19,7 @@ const RandomQuoteWindow = () => {
         alt={abstractForm2Svg}
         className={styles.section__Right__form2}
       />
+      <div>
       <h4 style={{ zIndex: '333' }}> Выбрать случайную цитату</h4>
       <Link to={RANDOM_ROUTE} className={styles.section__Right__btn}>
         <OpenBtn
@@ -27,6 +28,7 @@ const RandomQuoteWindow = () => {
           }}
         />
       </Link>
+      </div>
     </article>
   )
 }

@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 
-import { ImageSlider } from '../imageSlider/ImageSlider'
+import Logo from '../UI/logo/Logo'
+import { Link } from 'react-router-dom'
+import { HOME_ROUTE } from '../../routes/routes'
 import styles from './AllQuotes.module.scss'
-import SliderFooter from '../footer/Footer'
+import SliderFooter from '../commons/footer/Footer'
 import { useSelector, useDispatch } from 'react-redux'
 import { redirect } from 'react-router-dom'
 import { fetchPages } from '../../store/slices/pagesSlice'
 import LoadText from '../UI/loadingText/LoadText'
+import {QuoteItem} from '../commons/quoteItem/QuoteItem'
 import Loader from '../UI/Loader/Loader'
 export default function AllQuotes({ toglePicked }) {
   const { pages } = useSelector((state) => state.pages)
@@ -26,12 +29,6 @@ export default function AllQuotes({ toglePicked }) {
       dispatch(fetchPages())
     }, 3000)
   }, [dispatch])
-
-  const toggleExpand = () => {
-    setTimeout(() => {
-      setExpanded(!expanded)
-    }, 900)
-  }
 
   const handlePrevImage = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -59,20 +56,23 @@ export default function AllQuotes({ toglePicked }) {
       ) : (
         <>
           <div className={styles.Content}>
-            <ImageSlider
-              id={pages[currentImageIndex]?.id}
-              img={pages[currentImageIndex]?.img}
-              text={pages[currentImageIndex]?.text}
-              citates={pages[currentImageIndex]?.citates}
-              description={pages[currentImageIndex]?.description}
-              author={pages[currentImageIndex]?.author}
-              Life_history={pages[currentImageIndex]?.Life_history}
-              links={pages[currentImageIndex]?.links}
-              citateNumber={currentImageIndex}
-              imageData={pages[currentImageIndex]}
-              expanded={expanded}
-              toggleExpand={toggleExpand}
-            />
+          <main className={styles.main}>
+          <Link to={HOME_ROUTE}>
+            <Logo className={styles.exit} />
+          </Link>
+          <QuoteItem
+            id={pages[currentImageIndex]?.id}
+            img={pages[currentImageIndex]?.img}
+            text={pages[currentImageIndex]?.text}
+            citates={pages[currentImageIndex]?.citates}
+            description={pages[currentImageIndex]?.description}
+            author={pages[currentImageIndex]?.author}
+            Life_history={pages[currentImageIndex]?.Life_history}
+            links={pages[currentImageIndex]?.links}
+            citateNumber={currentImageIndex}
+            imageData={pages[currentImageIndex]}
+          />
+        </main>
           </div>
           <div className={styles.Footer}>
             <SliderFooter

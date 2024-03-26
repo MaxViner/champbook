@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Card.module.scss'
-import CitateItem from '../citates/citateItem/CitateItem'
+import CitateItem from '../citateItem/CitateItem'
 export const Card = React.memo(({ content, img, author, id, onHeartClick }) => {
   return (
     <div className={styles.card}>

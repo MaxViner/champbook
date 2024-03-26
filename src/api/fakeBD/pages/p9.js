@@ -1,7 +1,7 @@
 import dyrowp9 from'../images/dyrowp9.png'
 
 export const p9={
-    author:'Павла Дурова',
+    author:'Павел Дуров',
     img: dyrowp9,
     citates: 
     [ 
