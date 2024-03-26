@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { HOME_ROUTE } from '../../routes/routes';
 import Logo from '../UI/logo/Logo';
-import HeartLoader from '../UI/heartLoader/HeartLoader';
+import HeartLoader from '../UI/heartLoader';
 import LoadText from '../UI/loadingText/LoadText';
 import { Card } from '../commons/card/Card';
 import styles from './Favorite.module.scss'
