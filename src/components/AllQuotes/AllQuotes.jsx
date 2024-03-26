@@ -11,7 +11,8 @@ import { fetchPages } from '../../store/slices/pagesSlice'
 import LoadText from '../UI/loadingText/LoadText'
 import {QuoteItem} from '../commons/quoteItem/QuoteItem'
 import Loader from '../UI/Loader/Loader'
-export default function AllQuotes({ toglePicked }) {
+
+export const  AllQuotes = () => {
   const { pages } = useSelector((state) => state.pages)
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -79,7 +80,6 @@ export default function AllQuotes({ toglePicked }) {
               handleNextImage={handleNextImage}
               handleImageChange={handleImageChange}
               handlePrevImage={handlePrevImage}
-              toglePicked={toglePicked}
             />
           </div>
         </>
