@@ -10,7 +10,7 @@ import LoadText from '../UI/loadingText/LoadText'
 import Loader from '../UI/Loader/Loader'
 import useRandomPage from '../../hooks/useRandomPage'
 
-export const Random = ({}) => {
+export const RandomQuote = () => {
   const dispatch = useDispatch()
 
   const { pages } = useSelector((state) => state.pages)
