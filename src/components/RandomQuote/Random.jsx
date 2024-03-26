@@ -17,7 +17,6 @@ export const Random = ({}) => {
 
   const { randomPage, loadNewRandomPage } = useRandomPage(
     pages,
-    fetchPages,
   )
 
   useEffect(() => {

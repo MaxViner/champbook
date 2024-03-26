@@ -10,7 +10,6 @@ import { p9 } from "./fakeBD/pages/p9";
 import { p10 } from "./fakeBD/pages/p10";
 import { p11 } from "./fakeBD/pages/p11";
 import { p15 } from "./fakeBD/pages/p15";
-// import { p19 } from "./fakeBD/pages/p19";
 
 
 export const getPages = () => {

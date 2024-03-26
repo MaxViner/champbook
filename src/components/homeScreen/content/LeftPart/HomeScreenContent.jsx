@@ -10,8 +10,6 @@ export const HomeScreenContent = ({ setIsAboutBrojectView, setIsInfoView }) => {
     <>
       <h1 className={styles.homeScreen__Title}>
         Цитаты про жизнь, 
-        {/* <img src={abstarctImg} alt="abstarctImg" /> */}
-
         которые помогут вдохновиться и задуматься
       </h1>
       <div className={styles.SectionsList}>

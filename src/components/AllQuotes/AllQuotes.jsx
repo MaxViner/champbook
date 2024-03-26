@@ -22,7 +22,6 @@ export default function AllQuotes({ toglePicked }) {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const [expanded, setExpanded] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,7 +36,6 @@ export default function AllQuotes({ toglePicked }) {
     } else {
       redirect('/')
     }
-    setExpanded(false)
   }
 
   const handleImageChange = (event) => {
