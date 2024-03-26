@@ -9,6 +9,7 @@ const useFavorites = () => {
   const { pages } = useSelector((state) => state.pages);
   const [favorites, setFavorites] = useState(getFavorites());
   const [citates, setCitates] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   const upadateFavorites = () => setFavorites(getFavorites());
 
@@ -38,10 +39,11 @@ const useFavorites = () => {
     setCitates([]);
     setTimeout(() => {
       dispatch(fetchPages());
+      setIsLoading(false)
     }, 6000);
   }, [dispatch]);
 
-  return { favorites, citates, upadateFavorites };
+  return { favorites, citates, upadateFavorites, isLoading };
 };
 
 export default useFavorites;
